@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#cc9b9b</color>
+    <color name="colorPrimaryDark">#3b0000</color>
+    <color name="colorAccent">#3498db</color>
+
+    <color name="colorWhite">#ffffff</color>
+
+    <!-- f4cef5 -->
+
+    <color name="noUberPrimary">#cc9b9b</color>
+    <color name="noUberPrimaryDark">#3b0000</color>
+    <color name="noUberAccent">#ffe6f1</color>
+    <color name="noUberAsh">#e2e2e2</color>
+</resources>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/rootLogin"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight=".60"
+        android:background="@color/noUberPrimary"
+        >
+
+       <Refractored.Controls.CircleImageView
+            android:id="@+id/circleImageView1"
+            android:layout_width="200dp"
+            android:layout_centerInParent="true"
+            android:layout_height="200dp"
+            android:src="@drawable/linkedin_profile_image"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView1"
+            android:textSize="20sp"
+            android:text="@string/welcome"
+            android:gravity="center"
+            android:layout_below="@id/circleImageView1"
+            android:textColor="@android:color/white"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_weight=".40">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailText">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+            />
+        </android.support.design.widget.TextInputLayout>
+
+
+       <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/passwordText">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="0dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewNotRegistered"
+                android:text="@string/register"
+                android:clickable="true"
+                android:layout_above="@id/btnLogin"/>
+
+            <Button
+                android:layout_height="45dp"
+                android:layout_width="300dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/login"
+                android:layout_centerInParent="true"
+                android:textColor="@color/noUberAccent"
+                android:background="@drawable/round_button"
+                android:id="@+id/btnLogin"
+                ></Button>
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

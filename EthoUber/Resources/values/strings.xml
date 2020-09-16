@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string name="app_name">EthoUber</string>
+    <string name="action_settings">Settings</string>
+    <string name="nameText">Your name</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="welcome">Welcome</string>
+    <string name="register">Not Registered ? Click to create an account</string>
+    <string name="registered">Do you have an account ? Login </string>
+    <string name="favPlaces">My Favorite Places</string>
+    <string name="createAccount">Create Account</string>
+    <string name="mapApiKey">AIzaSyD2J-IFSewL3lC7F8YucJB6JAkbb_IlSkQ</string>
+    <string name="FireBApiKey">AIzaSyBazRVFLI9bdr0IMJAaN2kHS0UROuN0tb8</string>
+    
+    <string name="phone">Phone</string>
+    <string name="connection">Connection</string>
+    <string name="myLocation">My Location</string>
+
+    
+
+    
+
+</resources>
