@@ -11,8 +11,19 @@ using UIKit;
 
 namespace EthoUber_Ios
 {
-    [Register("ViewController")]
+    [Register ("ViewController")]
     partial class ViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnTest { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (BtnTest != null) {
+                BtnTest.Dispose ();
+                BtnTest = null;
+            }
+        }
     }
 }

@@ -17,6 +17,10 @@ namespace EthoUber_Ios
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
+
+            Firebase.Core.App.Configure();
+            Firebase.Database.Database.DefaultInstance.PersistenceEnabled = false;
+
             return true;
         }
 
