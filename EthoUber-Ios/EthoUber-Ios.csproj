@@ -119,6 +119,7 @@
     </ItemGroup>
     <ItemGroup>
         <Folder Include="Resources\" />
+        <Folder Include="ViewControllers\" />
     </ItemGroup>
     <ItemGroup>
         <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -136,9 +137,19 @@
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
+        <Compile Include="ontr.cs" />
+        <Compile Include="ontr.designer.cs">
+          <DependentUpon>ontr.cs</DependentUpon>
+        </Compile>
+        <Compile Include="ViewControllers\LoginController.cs" />
+        <Compile Include="ViewControllers\LoginController.designer.cs">
+          <DependentUpon>LoginController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="GoogleService-Info.plist" />
+      <BundleResource Include="Resources\logo_transparent.png" />
+      <BundleResource Include="Resources\ubernot.png" />
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
