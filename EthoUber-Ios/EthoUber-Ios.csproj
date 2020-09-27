@@ -145,6 +145,10 @@
         <Compile Include="ViewControllers\LoginController.designer.cs">
           <DependentUpon>LoginController.cs</DependentUpon>
         </Compile>
+        <Compile Include="ViewControllers\RegisterViewController.cs" />
+        <Compile Include="ViewControllers\RegisterViewController.designer.cs">
+          <DependentUpon>RegisterViewController.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
     <ItemGroup>
       <BundleResource Include="GoogleService-Info.plist" />
