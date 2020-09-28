@@ -137,10 +137,6 @@
         <Compile Include="ViewController.designer.cs">
             <DependentUpon>ViewController.cs</DependentUpon>
         </Compile>
-        <Compile Include="ontr.cs" />
-        <Compile Include="ontr.designer.cs">
-          <DependentUpon>ontr.cs</DependentUpon>
-        </Compile>
         <Compile Include="ViewControllers\LoginController.cs" />
         <Compile Include="ViewControllers\LoginController.designer.cs">
           <DependentUpon>LoginController.cs</DependentUpon>

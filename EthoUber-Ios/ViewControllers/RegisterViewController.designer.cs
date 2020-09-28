@@ -16,6 +16,10 @@ namespace EthoUber_Ios
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BtnSignin { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField EmailTextField { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace EthoUber_Ios
 
         void ReleaseDesignerOutlets ()
         {
+            if (BtnSignin != null) {
+                BtnSignin.Dispose ();
+                BtnSignin = null;
+            }
+
             if (EmailTextField != null) {
                 EmailTextField.Dispose ();
                 EmailTextField = null;
