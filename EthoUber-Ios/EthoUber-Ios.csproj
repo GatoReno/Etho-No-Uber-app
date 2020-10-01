@@ -26,6 +26,7 @@
         <MtouchArch>x86_64</MtouchArch>
         <MtouchLink>None</MtouchLink>
         <MtouchDebug>true</MtouchDebug>
+        <CodesignKey>iPhone Developer</CodesignKey>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
         <DebugType>none</DebugType>
@@ -147,6 +148,14 @@
         <Compile Include="ViewControllers\RegisterViewController.cs" />
         <Compile Include="ViewControllers\RegisterViewController.designer.cs">
           <DependentUpon>RegisterViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="NewViewController.cs" />
+        <Compile Include="NewViewController.designer.cs">
+          <DependentUpon>NewViewController.cs</DependentUpon>
+        </Compile>
+        <Compile Include="PatsyViewController.cs" />
+        <Compile Include="PatsyViewController.designer.cs">
+          <DependentUpon>PatsyViewController.cs</DependentUpon>
         </Compile>
     </ItemGroup>
     <ItemGroup>

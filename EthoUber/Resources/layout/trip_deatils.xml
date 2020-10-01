@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tripdetails_bottomsheet"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behaviour="android.support.desing.widget.BottomSheetBehavior"
+    >
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/noUberAsh"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="290dp"
+        android:background="#fff"
+        android:padding="16dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:layout_width="170dp"
+                android:src="@drawable/logo_transparent"
+                android:layout_height="170dp"/>
+            <TextView
+                android:id="@+id/tripEstimateFareText"
+                android:gravity="center"
+                android:text="$240 - 260"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"/>
+
+            
+
+        </LinearLayout>
+
+
+         <View
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/noUberAsh"
+        />
+
+        <LinearLayout
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp">
+
+             <LinearLayout
+                android:clickable="true"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp">
+
+                <ImageView
+                    android:contentDescription="Card Imagen"
+                    android:tint="@color/noUberPrimary"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/ic_wallet_action"
+                    />
+                <TextView
+                    android:text="Cash"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+             </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/newTripTimeText"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="25 min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+           
+
+
+        </LinearLayout>
+         <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+			<Button
+				android:layout_width="match_parent"
+				android:layout_height="12.0dp"
+				android:text="@string/Request Cab"
+				android:layout_gravity="center|bottom"
+				android:layout_marginBottom="30dp"
+				android:paddingBottom="8dp"
+				android:paddingTop="8dp"
+				android:paddingLeft="10dp"
+				android:paddingRight="10dp"
+				android:elevation="2dp"
+				android:translationZ="2dp"
+				android:textColor="@color/noUberAccent"
+				android:background="@drawable/round_button"
+				android:id="@+id/rquestBtn"/>
+            </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>
+
+<!--
+
+<LinearLayout
+                android:layout_width=""
+                android:layout_height="">
+            </LinearLayout>
+
+-->

@@ -1,5 +1,6 @@
 using CoreGraphics;
 using Firebase.Auth;
+using Firebase.Database;
 using Foundation;
 using System;
 using UIKit;
@@ -58,6 +59,7 @@ namespace EthoUber_Ios
             { Alert("Error", "Please enter a valid email"); }
             else if (password.Length < 8)
             { Alert("Error", "Please enter a valid password"); }
+            else { 
 
             Auth.DefaultInstance.CreateUser(email, password,
                 (AuthDataResult authresult, NSError error) =>
@@ -68,6 +70,18 @@ namespace EthoUber_Ios
                         if (user != null)
                         {
                             Alert("Registration Success full", "Please go ahead and login ");
+                            var userDictionary = new NSDictionary(
+                                "fullname", fullname,
+                                "email",email,
+                                "phone",phone
+                                );
+                            // save user details to firebase db
+                            DatabaseReference userRef = Database.DefaultInstance.GetRootReference().
+                            GetChild("users/"+ authresult.User.Uid);
+
+                            // save user info locally
+                            var userDefaults = NSUserDefaults.StandardUserDefaults;
+
 
                         }
                         else
@@ -79,6 +93,8 @@ namespace EthoUber_Ios
                         Alert("Error", error.LocalizedDescription);
                     }
                 });
+
+            }
 
         }
 

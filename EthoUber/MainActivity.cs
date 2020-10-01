@@ -193,7 +193,7 @@ namespace EthoUber
             mainMap = googleMap;
             mainMap.CameraIdle += MainMap_CameraIdle;
             string mapKey = Resources.GetString(Resource.String.mapApiKey);
-            mapFunctionHelper = new MapFunctionHelper(mapKey);
+            mapFunctionHelper = new MapFunctionHelper(mapKey,mainMap);
         }
 
         private async void MainMap_CameraIdle(object sender, EventArgs e)
