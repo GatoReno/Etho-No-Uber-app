@@ -78,7 +78,7 @@
                             />
                         
                       <RadioButton
-                            android:id="@+id/pickupBtn"
+                            android:id="@+id/pickupRadioBtn"
                             android:layout_gravity="end"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
@@ -121,7 +121,7 @@
                             />
                         
                       <RadioButton
-                            android:id="@+id/pickupBtn"
+                            android:id="@+id/destinationRadioBtn"
                             android:layout_gravity="end"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
@@ -213,7 +213,8 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:elevation="2dp"
-            android:translationZ="2dp"           
+            android:translationZ="2dp"
+            
             android:textColor="@color/noUberAccent"
             android:background="@drawable/round_button"
             android:id="@+id/favPlacesBtn"/>
@@ -229,11 +230,20 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:elevation="2dp"
-            android:translationZ="2dp"           
+            android:translationZ="2dp"
+             
             android:textColor="@color/noUberAccent"
             android:background="@drawable/round_button"
             android:id="@+id/locationSetBtn"/>
 
     </FrameLayout>
+    <!--
+    <include
+        android:id="@+id/tripdetails_include"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/trip_deatils"
+        /> -->
 
 </android.support.design.widget.CoordinatorLayout>

@@ -56,12 +56,26 @@ namespace EthoUber
         static int Update_Interval = 5; // seconds
         static int Fastest_Interval = 5; 
         static int Displacement = 3; // meters
+
+        // flags
+        int addressRequest = 1;
+        bool takeAddressFromSearch = false;
+        #endregion
+
+        //bottom sheet
+        #region
+        BottomSheetBehavior tripDetailsBottomSheetBehavior;
+        Button FavPlacesBtn;
+        Button LocationSetBtn;
+        RadioButton pickupRadioBtn;
+        RadioButton destinationRadioBtn;
         #endregion
 
         #region Helpers
         MapFunctionHelper mapFunctionHelper;
         //trip details
         LatLng pickupLocationLatLng;
+        LatLng destinationLocationLatLng;
         #endregion
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -198,8 +212,20 @@ namespace EthoUber
 
         private async void MainMap_CameraIdle(object sender, EventArgs e)
         {
-            pickupLocationLatLng = mainMap.CameraPosition.Target;
-            pickupLbl.Text =await mapFunctionHelper.FindCordinateAddress(pickupLocationLatLng);
+            if (!takeAddressFromSearch)
+            {
+                if (addressRequest == 1)
+                {
+                    pickupLocationLatLng = mainMap.CameraPosition.Target;
+                    pickupLbl.Text = await mapFunctionHelper.FindCordinateAddress(pickupLocationLatLng);
+                }
+                else if (addressRequest == 2)
+                {
+                    destinationLocationLatLng = mainMap.CameraPosition.Target;
+                    destinationupLbl.Text = await mapFunctionHelper.FindCordinateAddress(destinationLocationLatLng);
+                }
+            }
+           
         }
 
         void ConnectControl()
@@ -224,12 +250,59 @@ namespace EthoUber
             layoutPickUp.Click += layoutPickUp_Click;
             layoutDestination.Click += layoutDestination_Click;
 
+            //bottom sheet
+            FrameLayout tripDetailsView = (FrameLayout)FindViewById(Resource.Id.tripdetails_bottomsheet);
+            Button FavPlacesBtn = (Button)FindViewById(Resource.Id.favPlacesBtn);
+            Button LocationSetBtn = (Button)FindViewById(Resource.Id.locationSetBtn);
+
+            FavPlacesBtn.Click += FavPlacesBtn_Click;
+            LocationSetBtn.Click += LocationSetBtn_Click;
+
+            RadioButton pickupRadioBtn = (RadioButton)FindViewById(Resource.Id.pickupRadioBtn);
+            RadioButton destinationRadioBtn  = (RadioButton)FindViewById(Resource.Id.destinationRadioBtn);
+            pickupRadioBtn.Click += PickupRadioBtn_Click;
+            destinationRadioBtn.Click += DestinationRadioBtn_Click;
+
+            //tripDetailsBottomSheetBehavior = BottomSheetBehavior.From(tripDetailsView);
+
             if (!PlacesApi.IsInitialized)
             {
                 PlacesApi.Initialize(this, Resources.GetString(Resource.String.mapApiKey));
             }
 
 
+        }
+
+        private void DestinationRadioBtn_Click(object sender, EventArgs e)
+        {
+            addressRequest = 1;
+            pickupRadioBtn.Checked = true;
+            destinationRadioBtn.Checked = false;
+            takeAddressFromSearch = false;
+        }
+
+        private void PickupRadioBtn_Click(object sender, EventArgs e)
+        {
+            addressRequest = 2;
+            destinationRadioBtn.Checked = true;
+            pickupRadioBtn.Checked = false;
+            takeAddressFromSearch = false;
+        }
+
+        void TripLocationSet()
+        {
+            FavPlacesBtn.Visibility = ViewStates.Invisible;
+            LocationSetBtn.Visibility = ViewStates.Visible;
+        }
+
+        private void LocationSetBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void FavPlacesBtn_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void layoutDestination_Click(object sender, EventArgs e)
@@ -293,6 +366,10 @@ namespace EthoUber
             {
                 if (resultCode == Android.App.Result.Ok)
                 {
+                    //takeAddressFromSearch = true;
+                    //pickupRadioBtn.Checked = false;
+                    //destinationRadioBtn.Checked = false;
+
                     var place = Autocomplete.GetPlaceFromIntent(data);
                     pickupLbl.Text = place.Address.ToString();
                     mainMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(place.LatLng,15));
@@ -310,6 +387,10 @@ namespace EthoUber
             {
                 if (resultCode == Android.App.Result.Ok)
                 {
+                    //takeAddressFromSearch = true;
+                    //pickupRadioBtn.Checked = false;
+                    //destinationRadioBtn.Checked = false;
+
                     var place = Autocomplete.GetPlaceFromIntent(data);
                     destinationupLbl.Text = place.Address.ToString();
                     mainMap.AnimateCamera(CameraUpdateFactory.NewLatLngZoom(place.LatLng, 15));
@@ -320,6 +401,7 @@ namespace EthoUber
                        // .SetIcon((BitmapDescriptor)Resource.Drawable.redmarker)
                         ;
                     mainMap.AddMarker(options);
+                    TripLocationSet();
                 }
             }
         }
